@@ -1,0 +1,226 @@
+﻿
+.containerIndex
+{
+    margin: 0 auto;
+    width:95%;
+    margin-top: -10px;
+}
+
+.header1
+{
+    position:relative;
+    background-image : url(../headerBackground.png);
+    width:100%;
+    height :320px;
+    background-size: 100%; 
+    color:white;
+}
+
+
+.header1 .logo
+{
+    float:left;
+    position:absolute;
+    width:400px;
+    height:150px;
+    margin-left: 36%;
+    margin-top: 130px;
+}
+
+.locateButton1{
+    float:right;
+    margin-right: 5px;
+    width: 250px;
+    margin-top: 5px;
+}
+
+
+.containerLogin{
+    width:100%;
+    height:800px;
+    background-image : url(../naturalLib.jpg);
+    background-size: 100% 100%; 
+    
+}
+
+.navBar1 ul {
+    list-style-type: none;
+    padding:0px;
+
+}
+
+.navBar1 li {
+    float: left;
+  
+}
+
+.navBar1 li a {
+    display: block;
+    color: white;
+    text-align: center;
+    margin-left: 25px;
+    margin-top: 14px;
+    text-decoration: none;
+  
+}
+
+.navBar1 li a:hover {
+    color: white;
+    text-decoration : none;
+    
+}
+
+.filter {
+    padding-left: 20px;
+    padding-top: 12px;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    margin-bottom:10px;
+    margin-top:10px;
+    
+}
+
+#TextBox2 {
+    border-style: solid;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+} 
+
+.BookViewer {
+    position: relative;
+    background-color: white;
+    width: 75%;
+    height: 950px;
+    overflow-y: scroll;
+    float: left;
+    font-weight: bolder;
+   
+}
+
+#dlCourses {
+    float: left;
+    width: 100%;
+    background-color: #fbfbfb;
+    padding: 0;
+}
+
+
+.DataListClass{
+    float:left;
+    border : solid;
+    border-color : #339933;
+    width : 99%;
+    height : 145px;
+}
+
+.DataListClass :hover{
+    background-color: #cbfd5b;
+}
+
+.booksTable{
+    float : left;
+    width : 100%;
+    max-height: 140px;
+}
+
+.booksTable ul {
+        margin-top: 2%;
+    }
+
+.booksTable ul li {
+    margin-left: 15%;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: Chiller;
+    font-size: 18pt;
+}
+
+.imgBooks {
+    position: relative;
+    float: left;
+    height: 141px;
+    width: 150px;
+}
+
+
+.RightPanel{
+    float:right;
+    background-color:white;
+    height : 750px;
+    width : 25%;
+    margin-top:-35px;
+    
+}
+
+.RightPanel ul li{
+    text-decoration : none;
+    list-style-type : none;
+  
+
+}
+
+.RightPanel  img{
+   margin-top:11%;
+    height : 250px;
+    width : 150px;
+
+}
+
+.lblSummaryCss {
+    float: left;
+    position: relative;
+    width: 100%;
+    height: 350px;
+    margin-top: 50px;
+    overflow-y: scroll;
+    margin-left:15px;
+}
+
+
+.btnDetail{
+    position : relative;
+    float: right;
+    margin-top: 100px;
+    margin-right: 10px;
+    display : inline;
+   
+}
+
+#DropDownList1 {
+    border: solid;
+    font-family: Rockwell;
+    background-color: white;
+    color: black;
+    margin-left: 5%;
+    cursor: pointer;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+   
+}
+
+#DropDownList2 {
+    border: solid;
+    font-family: Rockwell;
+    background-color: white;
+    color: black;
+    margin-left: 1%;
+    cursor: pointer;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+#lblTitle {
+    position:relative;
+    margin-left:0;
+    font-size: 22pt;
+    font-weight: bold;
+   
+}
+
+#lblAuthor {
+    margin-left: 50px;
+    font-size: 20pt;
+    text-align: center;
+    font-style: italic;
+}
+
+
+

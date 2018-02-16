@@ -1,0 +1,207 @@
+﻿.borrowField{
+    position : relative;
+    width: 80%;
+    height : 550px;
+    float:right;
+    
+}
+
+.borrowField .stockLabel{
+    float:right;
+    margin-top: 50px;
+    margin-right : 25px;
+    font-size : 25px;
+}
+
+.Img{
+    width : 250px;
+    height:250px;
+    float:right;
+    margin-top:40px;
+    margin-right : 2%;
+}
+
+.getBook{
+    float:left;
+    width : 30%;
+    height : 200px;
+    margin-top: 50px;
+}
+
+.borrowBook{
+    margin : 0 auto;
+    margin-top : 28%;
+    position : relative;
+    width : 50%;
+    height : 350px;
+}
+
+.wrap
+{
+    position: relative;
+    top: 0;
+    left: 0;   
+}
+
+p.form-title
+{
+    font-family: 'Open Sans' , sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+    margin-top: 5%;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    
+}
+
+.formLogin
+{
+    width: 250px;
+    margin: 0 auto;
+}
+
+.formLogin input[type="text"], .formLogin input[type="password"]
+{
+    width: 100%;
+    margin: 0;
+    padding: 5px 10px;
+    background: 0;
+    border: 0;
+    border-bottom: 1px solid #FFFFFF;
+    outline: 0;
+    font-style: italic;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    color: #FFFFFF;
+    outline: 0;
+}
+
+.formLogin input[type="submit"]
+{
+    width: 100%;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-top: 16px;
+    outline: 0;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.formLogin input[type="submit"]:hover
+{
+    transition: background-color 0.5s ease;
+}
+
+.formLogin .remember-forgot
+{
+    float: left;
+    width: 100%;
+    margin: 10px 0 0 0;
+}
+.formLogin .forgot-pass-content
+{
+    min-height: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.formLogin label, .formLogin a
+{
+    font-size: 12px;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+.formLogin a
+{
+    transition: color 0.5s ease;
+}
+
+.formLogin a:hover
+{
+    color: #2ecc71;
+}
+
+.gridBox{
+    width : 450px;
+    height : 250px;
+    float:left;
+}
+
+
+
+
+.mydatagrid
+{
+	width: 100%;
+	min-width: 80%;
+}
+
+.headerGrid
+{
+	background-image: url(../opacity.png));
+	font-family: Arial;
+	color: white;
+	border: none 0px transparent;
+	height: 25px;
+	text-align: left;
+	font-size: 16px;
+}
+
+
+
+.rows
+{
+    
+	background-image: url(../50.png);
+	font-family: Arial;
+	font-size: 19px;
+	color: black;
+	min-height: 25px;
+	text-align: left;
+	border: none 0px transparent;
+    
+}
+
+
+.selectedrow
+{
+	font-family: Arial;
+	color: #fff;
+	font-weight: bold;
+	text-align: left;
+}
+
+
+
+.alt{
+    background-image:url(../80.png);
+    font-family: Arial;
+	font-size: 19px;
+	color: #1b1b1b;
+	min-height: 25px;
+	text-align: left;
+	border: none 0px transparent;
+}
+
+
+.mydatagrid td
+{
+	padding : 5px;
+}
+
+.Visible{
+    display:none;
+}
+
+
+
+
+
+
+
+

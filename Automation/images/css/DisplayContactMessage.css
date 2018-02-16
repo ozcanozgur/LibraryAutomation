@@ -1,0 +1,87 @@
+﻿
+.ContactMessageViewer {
+    position: relative;
+    background-color: transparent;
+    width: 80%;
+    min-height : 100%;
+    float: right;
+    font-weight: bolder;
+   
+}
+
+#dlCourses {
+    float: left;
+    width: 100%;
+    background-color: transparent;
+    padding: 0;
+}
+
+
+.DataListClass{
+    float:left;
+    border : 1px solid;
+    border-color : antiquewhite;
+    width : 99%;
+    height : 145px;
+}
+
+.DataListClass :hover{
+    background-color: #cbfd5b;
+}
+
+.ContactTable{
+    float : left;
+    width : 100%;
+    max-height: 140px;
+}
+
+
+
+.ContactTable ul li {
+    
+    list-style-type: none;
+    text-decoration: none;
+    font-size: 10pt;
+    color : white;
+}
+
+.imgBooks {
+    position: relative;
+    float: left;
+    height: 141px;
+    width: 150px;
+}
+
+
+
+
+
+
+.btnDetail{
+    position : relative;
+    float: right;
+    margin-top: 100px;
+    margin-right: 10px;
+    display : inline;
+   
+}
+
+
+
+#lblTitle {
+    position:relative;
+    margin-left:0;
+    font-size: 22pt;
+    font-weight: bold;
+   
+}
+
+#lblAuthor {
+    margin-left: 50px;
+    font-size: 20pt;
+    text-align: center;
+    font-style: italic;
+}
+
+
+
