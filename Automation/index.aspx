@@ -83,6 +83,9 @@
                                 <li>
                                     Author : <asp:Label  ID="Author" runat="server"  Text='<%# Eval("Author") %>'> </asp:Label>
                                 </li>
+                                <li>
+                                    <span class="fa fa-star checked">  </span> : <asp:Label  ID="Point" runat="server"  Text='<%# Eval("BookRate") %>'> </asp:Label>
+                                </li>
                            </ul>
                                    
                         </div> 

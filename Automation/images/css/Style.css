@@ -110,7 +110,7 @@
     border : solid;
     border-color : #339933;
     width : 99%;
-    height : 145px;
+    height : 155px;
 }
 
 .DataListClass :hover{
@@ -120,7 +120,7 @@
 .booksTable{
     float : left;
     width : 100%;
-    max-height: 140px;
+    max-height: 150px;
 }
 
 .booksTable ul {
@@ -138,7 +138,7 @@
 .imgBooks {
     position: relative;
     float: left;
-    height: 141px;
+    height: 152px;
     width: 150px;
 }
 
@@ -220,6 +220,10 @@
     font-size: 20pt;
     text-align: center;
     font-style: italic;
+}
+
+.checked {
+    color: orange;
 }
 
 

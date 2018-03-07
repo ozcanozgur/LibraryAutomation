@@ -1,7 +1,22 @@
+use master
+go
 
+IF EXISTS(select * from sys.databases where name='LibraryAutomation')
+begin
+ALTER DATABASE LibraryAutomation SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+drop database LibraryAutomation;
+end
+go
+
+
+IF NOT EXISTS(select * from sys.databases where name='LibraryAutomation')
 create database LibraryAutomation
+go
+
 
 use LibraryAutomation
+go
+
 
 CREATE TABLE Contact(
 	[ID] [int] IDENTITY(1,1) NOT NULL,
@@ -39,6 +54,7 @@ CREATE TABLE Contact(
 	Publisher [varchar](255) NULL,
 	BookImage varchar(255),
 	Summary text NULL,
+	BookRate float default 1,
 	 PRIMARY KEY (BookID),
 	);
 	
