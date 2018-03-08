@@ -93,7 +93,16 @@ form.login a:hover
     color: #2ecc71;
 }
 
+.containerLogin {
+    width: 100%;
+    height: 800px;
+    background-image: url(../naturalLib.jpg);
+    background-size: 100% 100%;
+}
 
+body{
+    overflow : hidden;
+}
 
 
 

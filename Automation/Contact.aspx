@@ -12,15 +12,15 @@
     <title>Contact</title>
 </head>
 <body>
-    
+        <form class="form-horizontal" runat="server">
         <div class="ContainerContact">
 
             
                         <div class="navBar2">
                             <ul>
-                                <li><a class="active" href="index.aspx">Home</a></li>
-                                <li><a href="Contact.aspx">Contact</a></li>
-                                <li><a href="AboutUs.aspx">About Us</a></li>
+                                <li><asp:linkbutton runat="server" OnClick="HomeClick">Home</asp:linkbutton></li>
+                                <li><asp:linkbutton runat="server" OnClick="ContactClick">Contact</asp:linkbutton></li>
+                                <li><asp:linkbutton runat="server" OnClick="AboutUsClick">About Us</asp:linkbutton></li>
                             </ul>
                         </div>
             
@@ -29,7 +29,7 @@
 	                                                    <div class="row">
                                                           <div class="col-6">
                                                             <div class="well well-sm">
-                                                              <form class="form-horizontal" runat="server">
+                                                              
                                                               <fieldset>
                                                                 <legend class="text-center">Contact us</legend>
     
@@ -66,7 +66,7 @@
                                                                   </div>
                                                                 </div>
                                                               </fieldset>
-                                                              </form>
+                                                             
                                                             </div>
                                                           </div>
                                                            
@@ -92,7 +92,7 @@
                                 </div>
                          </div>
         </div>
-        
-   
+       
+    </form>
 </body>
 </html>

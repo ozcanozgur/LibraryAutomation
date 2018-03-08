@@ -40,4 +40,19 @@ public partial class Contact : System.Web.UI.Page
 
         ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + message + "');", true);
     }
+
+    protected void ContactClick(object sender, EventArgs e)
+    {
+        Response.Redirect("Contact.aspx?sid=" + Request.QueryString["sid"]);
+    }
+
+    protected void HomeClick(object sender, EventArgs e)
+    {
+        Response.Redirect("index.aspx?sid=" + Request.QueryString["sid"]);
+    }
+
+    protected void AboutUsClick(object sender, EventArgs e)
+    {
+        Response.Redirect("AboutUs.aspx?sid=" + Request.QueryString["sid"]);
+    }
 }

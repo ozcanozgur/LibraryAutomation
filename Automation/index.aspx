@@ -21,9 +21,9 @@
 
                 <div class="navBar1">
                     <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="Contact.aspx">Contact</a></li>
-                    <li><a href="AboutUs.aspx">About</a></li>
+                    <li><asp:linkbutton runat="server" OnClick="HomeClick">Home</asp:linkbutton></li>
+                    <li><asp:linkbutton runat="server" OnClick="ContactClick">Contact</asp:linkbutton></li>
+                    <li><asp:linkbutton runat="server" OnClick="AboutUsClick">About Us</asp:linkbutton></li>
                     </ul>
                 </div>
                   

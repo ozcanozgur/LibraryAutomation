@@ -126,9 +126,9 @@ public partial class index : System.Web.UI.Page
     }
 
     protected void DataListCommand(object source, DataListCommandEventArgs e)
-
     {
         DetailPanel.Visible = true;
+        string StudentID = Request.QueryString["sid"];
         Button btn = ((Button)e.CommandSource);
 
         string connectionString = ConfigurationManager.ConnectionStrings["DBSC"].ConnectionString;
@@ -147,6 +147,8 @@ public partial class index : System.Web.UI.Page
         
         if (dtBooks.Rows.Count > 0)
         {
+
+            Response.Redirect("BookDetail.aspx?sid="+StudentID+"&bid=" + dtBooks.Rows[0]["BookID"]);
             imgBookImage.ImageUrl = "images/Books Images/" + dtBooks.Rows[0]["BookImage"].ToString();
             lblTitle.Text = dtBooks.Rows[0]["title"].ToString();
             lblAuthor.Text = dtBooks.Rows[0]["genre"].ToString();
@@ -154,6 +156,26 @@ public partial class index : System.Web.UI.Page
         }
         
     }
+
+    
+    protected void ContactClick(object sender, EventArgs e)
+    {
+        Response.Redirect("Contact.aspx?sid=" + Request.QueryString["sid"]);
+    }
+
+    protected void HomeClick(object sender, EventArgs e)
+    {
+        Response.Redirect("index.aspx?sid=" + Request.QueryString["sid"]);
+    }
+
+    protected void AboutUsClick(object sender, EventArgs e)
+    {
+        Response.Redirect("AboutUs.aspx?sid=" + Request.QueryString["sid"]);
+    }
+
+
+
+
 
 
 

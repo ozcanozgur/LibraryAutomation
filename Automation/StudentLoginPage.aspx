@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="loginPage.aspx.cs" Inherits="loginPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="StudentLoginPage.aspx.cs" Inherits="StudentLoginPage" %>
 
 <!DOCTYPE html>
 
@@ -6,17 +6,16 @@
 <head runat="server">
    
     <link href="images/boostrap/css/bootstrap.css" rel="stylesheet" />
-    <link href="images/css/loginPage.css" rel="stylesheet" />     
+    <link href="images/css/loginPage.css" rel="stylesheet" /> 
     <title></title>
 </head>
 <body>
-    
     <div class="containerLogin">
         <div class="row">
             <div class="col-md-12">
                 <div class="wrap">
                     <p class="form-title">
-                        Sign In</p>
+                        Student Sign In</p>
                     <form class="login" runat="server"> 
                         <asp:TextBox ID="txtUsername"  runat="server" placeholder="Username"/>
                         <asp:TextBox ID="txtPassword"  runat="server" TextMode="Password" placeholder="Password" />

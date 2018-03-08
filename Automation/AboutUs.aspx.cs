@@ -11,4 +11,19 @@ public partial class AboutUs : System.Web.UI.Page
     {
 
     }
+
+    protected void ContactClick(object sender, EventArgs e)
+    {
+        Response.Redirect("Contact.aspx?sid=" + Request.QueryString["sid"]);
+    }
+
+    protected void HomeClick(object sender, EventArgs e)
+    {
+        Response.Redirect("index.aspx?sid=" + Request.QueryString["sid"]);
+    }
+
+    protected void AboutUsClick(object sender, EventArgs e)
+    {
+        Response.Redirect("AboutUs.aspx?sid=" + Request.QueryString["sid"]);
+    }
 }

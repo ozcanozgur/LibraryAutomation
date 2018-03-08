@@ -75,9 +75,13 @@ CREATE TABLE Contact(
 	INSERT INTO Books(Title,Genre,Author,Publisher,BookImage,Summary) VALUES (N'The Templars',N'History',N'Dan Jones',N'Viking','Thetemplars.jpg','Jerusalem 1119. A small group of knights seeking a purpose in the violent aftermath of the First Crusade decides to set up a new order. These are the first Knights Templar, a band of elite warriors prepared to give their lives to protect Christian pilgrims to the Holy Land. Over the next two hundred years, the Templars would become the most powerful religious order of the medieval world. Their legend has inspired fervent speculation ever since.
 In this groundbreaking narrative history, Dan Jones tells the true story of the Templars for the first time in a generation, drawing on extensive original sources to build a gripping account of these Christian holy warriors whose heroism and alleged depravity have been shrouded in myth. The Templars were protected by the pope and sworn to strict vows of celibacy. They fought the forces of Islam in hand-to-hand combat on the sun-baked hills where Jesus lived and died, finding their nemesis in Saladin, who vowed to drive all Christians from the lands of Islam. 
 Experts at channeling money across borders, they established the medieval world''s largest and most innovative banking network and waged private wars against anyone who threatened their interests.
-Then, as they faced setbacks at the hands of the ruthless Mamluk sultan Baybars and were forced to retreat to their stronghold in Cyprus, a vindictive and cash-strapped King of France set his sights on their fortune. His administrators quietly mounted a damning case against the Templars, built on deliberate lies and false testimony. Then on Friday October 13, 1307, hundreds of brothers were arrested, imprisoned and tortured, and the order was disbanded amid lurid accusations of sexual misconduct and heresy. 
+Then, as they faced setbacks at the hands of the ruthless Mamluk sultan Baybars 
+and were forced to retreat to their stronghold in Cyprus, a vindictive and 
+cash-strapped King of France set his sights on their fortune. His administrators quietly mounted a 
+damning case against the Templars, built on deliberate lies and false testimony. Then on Friday October 13, 1307, hundreds of brothers were arrested, imprisoned and tortured, and the order was disbanded amid lurid accusations of sexual misconduct and heresy. 
 They were tried by the Pope in secret proceedings and their last master was brutally tortured and burned at the stake. But were they heretics or victims of a ruthlessly repressive state? 
-Dan Jones goes back to the sources tobring their dramatic tale, so relevant to our own times, in a book that is at once authoritative and compulsively readable.');
+Dan Jones goes back to the sources tobring their dramatic tale,
+ so relevant to our own times, in a book that is at once authoritative and compulsively readable.');
 INSERT INTO Books(Title,Genre,Author,Publisher,BookImage,Summary) VALUES ('The Perfect Horse','History','Elizabeth Letts','Ballantine Books','Theperfecthorse.jpg','In the chaotic last days of the war, a small troop of battle-weary American soldiers captures a German spy and makes an astonishing find--his briefcase is empty but for photos of beautiful white horses that have been stolen and kept on a secret farm behind enemy lines. Hitler has stockpiled the world''s finest purebreds in order to breed the perfect military machine--an equine master race. 
 But with the starving Russian army closing in, the animals are in imminent danger of being slaughtered for food.
 With only hours to spare, one of the U.S. Army''s last great cavalrymen, Colonel Hank Reed, makes a bold decision--with General George Patton''s blessing-to mount a covert rescue operation. Racing against time, Reed''s small but determined force of soldiers, aided by several turncoat Germans, steals across enemy lines in a last-ditch effort to save the horses. 
@@ -196,6 +200,7 @@ So, she travels to Rome, where she learns Italian from handsome, brown-eyed iden
 
 
 
+
 insert into Admin (FirstName,LastName,password,MailAddress,PhoneNumber) values ('admin','ozgur','1234','aadfad@sdfa.com','4564654')
 go
 
@@ -208,6 +213,8 @@ go
  (select MemberID from Member where FirstName='ozcan' and tcNo = '123456789'),getdate()+ 25, getdate());
  go
 
+
+ select * from Member
 
 
 
