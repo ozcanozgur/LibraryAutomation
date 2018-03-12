@@ -97,7 +97,7 @@
                     <columns>
                         
                         <asp:boundfield datafield="Title"  headertext="Book Stocks"></asp:boundfield>
-                         <asp:boundfield datafield="bookImage" ItemStyle-CssClass="Visible" ></asp:boundfield>
+                        <asp:boundfield datafield="bookImage" ItemStyle-CssClass="Visible" ></asp:boundfield>
                     </columns>
                 </asp:GridView>
             </div>

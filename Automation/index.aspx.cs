@@ -21,11 +21,7 @@ public partial class index : System.Web.UI.Page
         }
     }
 
-    protected void adminPanelButton_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("loginPage.aspx");
-    }
-
+    
 
     private void ListStudentCourse()
     {
@@ -72,8 +68,7 @@ public partial class index : System.Web.UI.Page
 
     private void mainFilterFunction()
     {
-        header1.Style.Add("height" , "50px");
-        logoId.Visible = false;
+        
         string dL = DropDownList1.SelectedValue;
         string dl2 = DropDownList2.SelectedValue;
         string input = TextBox2.Text;
@@ -151,7 +146,7 @@ public partial class index : System.Web.UI.Page
 
     protected void DataListCommand(object source, DataListCommandEventArgs e)
     {
-        DetailPanel.Visible = true;
+        
         string StudentID = Request.QueryString["sid"];
         Button btn = ((Button)e.CommandSource);
 
@@ -172,11 +167,8 @@ public partial class index : System.Web.UI.Page
         if (dtBooks.Rows.Count > 0)
         {
 
-            //Response.Redirect("BookDetail.aspx?sid="+StudentID+"&bid=" + dtBooks.Rows[0]["BookID"]);
-            imgBookImage.ImageUrl = "images/Books Images/" + dtBooks.Rows[0]["BookImage"].ToString();
-            lblTitle.Text = dtBooks.Rows[0]["title"].ToString();
-            lblAuthor.Text = dtBooks.Rows[0]["genre"].ToString();
-            lblSummary.Text = "    " + dtBooks.Rows[0]["Summary"].ToString();
+            Response.Redirect("BookDetail.aspx?sid="+StudentID+"&bid=" + dtBooks.Rows[0]["BookID"]);
+           
         }
         
     }

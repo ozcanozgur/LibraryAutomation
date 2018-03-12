@@ -2,18 +2,16 @@
 .ContainerContact {
     margin: 0 auto;
     width: 95%;
-    min-height: 650px;
+    height: 500px;
+    background-size: 100% 100%;
     background-color: #3e3e42;
     background-image: url('../booksBackgroundDown.png');
-    
+    margin-top: -10px;
 }
 
 .navBar2{
    width:100%;
-   height : 43px;
-   background-image : url(../../images/navBarBackground.png);
-   background-size: 100% 100%
-    
+   height : 43px;  
 }
 
 

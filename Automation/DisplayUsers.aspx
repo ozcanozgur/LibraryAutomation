@@ -84,7 +84,7 @@
                         <asp:boundfield datafield="Name"  headertext="NameSurname"></asp:boundfield>
                         <asp:boundfield datafield="MailAddress" headertext="Mail Address"> </asp:boundfield>
                         <asp:boundfield datafield="PhoneNumber" headertext="Phone Number"> </asp:boundfield>
-                        <asp:boundfield datafield="tcNo" headertext="School ID">  </asp:boundfield>
+                        <asp:boundfield datafield="SchoolID" headertext="School ID">  </asp:boundfield>
                         
                         
                     </columns>

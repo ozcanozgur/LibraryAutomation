@@ -1,0 +1,22 @@
+﻿.containerBookDetail {
+    margin: 0 auto;
+    width: 95%;
+}
+
+.header1 {
+    position: relative;
+    background-image: url(../headerBackground.png);
+    width: 100%;
+    height: 50Px;
+    background-size: 100%;
+}
+
+.logOut {
+    background-color: white;
+    min-width: 1%;
+    height: 50px;
+    float: right;
+    opacity: 0.3;
+    color: black;
+    border: solid 2px;
+}

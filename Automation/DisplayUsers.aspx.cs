@@ -15,7 +15,7 @@ public partial class DisplayUsers : System.Web.UI.Page
         
         string constr = ConfigurationManager.ConnectionStrings["DBSC"].ConnectionString;
         SqlConnection con = new SqlConnection(constr);
-        SqlDataAdapter sda = new SqlDataAdapter("select (FirstName +' '+ LastName) as Name , MailAddress , PhoneNumber , tcNo from member", con);
+        SqlDataAdapter sda = new SqlDataAdapter("select (FirstName +' '+ LastName) as Name , MailAddress , PhoneNumber , SchoolID from member", con);
         con.Open();
         DataTable dtCourse = new DataTable();
         sda.Fill(dtCourse);

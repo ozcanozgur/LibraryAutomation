@@ -16,8 +16,7 @@
         <div class ="containerIndex">
             <div class="header1"  runat="server" id="header1">
 
-                <!--<asp:Button ID="adminPanelButton"  class="btn btn-outline-danger locateButton1" runat="server" Text="Click For Admin Panel"  UseSubmitBehavior="False" OnClick="adminPanelButton_Click" />-->
-                <img id="logoId" runat="server" class="logo"  visible="true"  src ="images/logo.png" />
+                
               
                 <div class="logOut">
                     
@@ -120,29 +119,6 @@
 
                 
             </div>
-
-            
-			<div class="RightPanel"  id="DetailPanel" runat="server" visible="false">
-                    
-                <ul>
-                    <li>
-                        <asp:Image ID="imgBookImage" runat="server"  Width="250px"  />
-                    </li>
-                    <li>    
-                        <asp:Label ID="lblTitle" runat="server" Text="Label"></asp:Label>
-                    </li>                  
-                    <li>
-                        <asp:Label ID="lblAuthor" runat="server" Text="Label"></asp:Label>
-                    </li>
-                </ul>    
-                    <div class="lblSummaryCss">
-                    <asp:Label ID="lblSummary"  runat="server" Text="Label"></asp:Label>
-                    </div>
-
-			</div>
-				               
-
-            
 
         </div>
     </form>
