@@ -15,6 +15,11 @@ public partial class loginPage : System.Web.UI.Page
 
     }
 
+    protected void StudentPanelClick(object sender, EventArgs e)
+    {
+        Response.Redirect("StudentLoginPage.aspx");
+    }
+
     protected void btnSubmit_Click(object sender, EventArgs e)
     {
         string constr = ConfigurationManager.ConnectionStrings["DBSC"].ConnectionString;

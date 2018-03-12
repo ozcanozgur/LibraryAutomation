@@ -15,12 +15,18 @@
             <div class="col-md-12">
                 <div class="wrap">
                     <p class="form-title">
-                        Student Sign In</p>
+                        Student Log In</p>
                     <form class="login" runat="server"> 
-                        <asp:TextBox ID="txtUsername"  runat="server" placeholder="Username"/>
+                        <asp:TextBox ID="txtSchoolID"  runat="server" placeholder="School ID"/>
+                        <asp:RequiredFieldValidator  Display="Dynamic" ErrorMessage="Required" ForeColor="Red" ControlToValidate="txtSchoolID" runat="server" />
+
                         <asp:TextBox ID="txtPassword"  runat="server" TextMode="Password" placeholder="Password" />
+                        <asp:RequiredFieldValidator  Display="Dynamic" ErrorMessage="Required" ForeColor="Red" ControlToValidate="txtPassword" runat="server" />
+
                         <asp:Button type="submit" ID="Button1" runat="server" Text="Sign In" class="btn btn-success btn-sm" OnClick="btnSubmit_Click" />
-                    
+                        <asp:Button ID="adminPanelButton" ValidationGroup="Group2"  class="btn btn-outline-danger locateButton1" runat="server" Text="Click For Admin Panel"  UseSubmitBehavior="False" OnClick="adminPanelButton_Click" />
+                        <asp:Button ID="registerButton"  class="btn btn-outline-danger locateButton2" runat="server" Text="Register"  UseSubmitBehavior="False" OnClick="registerButton_Click" />
+                   
                     </form>
                 </div>
             </div>

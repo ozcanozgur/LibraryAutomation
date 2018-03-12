@@ -27,6 +27,15 @@
     margin-top: 130px;
 }
 
+.logOut
+{
+    background-color:white;
+    width: 15%;
+    height : 80px;
+    float:right;
+    opacity : 50;
+}
+
 .locateButton1{
     float:right;
     margin-right: 5px;

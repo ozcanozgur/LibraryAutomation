@@ -63,7 +63,7 @@
                                         <span class="fa fa-adjust">  </span>  Display Contact Messages
                                     </li>
                                 </a>
-                                <a href="index.aspx">
+                                <a href="StudentLoginPage.aspx">
                                     <li>
                                         <span class="fa fa-sign-out">  </span>  Log Out Admin Panel
                                     </li>

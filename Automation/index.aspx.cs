@@ -17,6 +17,7 @@ public partial class index : System.Web.UI.Page
         if (!Page.IsPostBack)
         { 
             ListStudentCourse();
+            ListUserİnfo();
         }
     }
 
@@ -43,6 +44,29 @@ public partial class index : System.Web.UI.Page
             dlCourses.DataSource = dtBooks;
             dlCourses.DataBind();
             connection.Close();
+
+            
+        }
+    }
+
+    private void ListUserİnfo()
+    {
+        string connectionString = ConfigurationManager.ConnectionStrings["DBSC"].ConnectionString;
+        SqlConnection connection = new SqlConnection(connectionString);
+        connection.Open();
+
+        DataTable dtUser = new DataTable();
+        if (connection.State == ConnectionState.Open)
+        {
+            string query = " select * from Member where MemberID=  '" + Request.QueryString["sid"] + "' "; 
+            SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+            adapter.Fill(dtUser);
+
+            DataList1.DataSource = dtUser;
+            DataList1.DataBind();
+            connection.Close();
+
+
         }
     }
 
@@ -148,7 +172,7 @@ public partial class index : System.Web.UI.Page
         if (dtBooks.Rows.Count > 0)
         {
 
-            Response.Redirect("BookDetail.aspx?sid="+StudentID+"&bid=" + dtBooks.Rows[0]["BookID"]);
+            //Response.Redirect("BookDetail.aspx?sid="+StudentID+"&bid=" + dtBooks.Rows[0]["BookID"]);
             imgBookImage.ImageUrl = "images/Books Images/" + dtBooks.Rows[0]["BookImage"].ToString();
             lblTitle.Text = dtBooks.Rows[0]["title"].ToString();
             lblAuthor.Text = dtBooks.Rows[0]["genre"].ToString();
@@ -173,6 +197,8 @@ public partial class index : System.Web.UI.Page
         Response.Redirect("AboutUs.aspx?sid=" + Request.QueryString["sid"]);
     }
 
+
+   
 
 
 

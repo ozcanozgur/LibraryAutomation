@@ -29,11 +29,12 @@ CREATE TABLE Contact(
 	
 	CREATE TABLE Member(
 	[MemberID] [int] IDENTITY(1,1) NOT NULL,
-	[FirstName] [varchar](255) NULL,
+	[FirstName] [varchar](255) NOT NULL,
 	[LastName] [varchar](255) NOT NULL,
-	[MailAddress] [varchar](255) NULL,
-	[PhoneNumber] [varchar](255) NULL,
-	tcNo int not null unique,
+	[Password] varchar (255) NOT NULL,
+	[MailAddress] [varchar](255) NOT NULL,
+	[PhoneNumber] [varchar](255) NOT NULL,
+	[SchoolID] int not null unique,
 	PRIMARY KEY (MemberID),
 	 );
 
@@ -55,7 +56,7 @@ CREATE TABLE Contact(
 	BookImage varchar(255),
 	Summary text NULL,
 	BookRate float default 1,
-	 PRIMARY KEY (BookID),
+	PRIMARY KEY (BookID),
 	);
 	
 	CREATE TABLE [Borrowed Books] (
@@ -205,7 +206,7 @@ insert into Admin (FirstName,LastName,password,MailAddress,PhoneNumber) values (
 go
 
  insert into Member (FirstName, LastName, MailAddress, PhoneNumber, tcNo) values 
- ('ozcan','ozgur','ozcanozgur123@gmail.com','05394947484','123456789')
+ ('ugurhan','uslu','ozcanozgur123@gmail.com','05394947484','123456710')
  go
 
  insert into [Borrowed Books] (BookID,MemberID,ExpiredDate,borrowDate) values 
@@ -215,6 +216,15 @@ go
 
 
  select * from Member
+
+ select * from Books
+
+ 
+
+
+ update Books set BookRate =5 where BookID = 2
+
+ select * from Member 
 
 
 

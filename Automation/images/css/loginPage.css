@@ -104,6 +104,27 @@ body{
     overflow : hidden;
 }
 
+.locateButton1{
+    margin-top:-900px;
+    margin-left:650px;
+}
+
+.locateButton2
+{
+
+    margin-top:-945px;
+    margin-left:-600px;
+}
+
+.registerLocate
+{
+    margin-top:215px;
+}
+
+.logInPageButton{
+    margin-top : -1092px;
+}
+
 
 
 

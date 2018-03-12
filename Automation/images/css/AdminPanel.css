@@ -155,9 +155,9 @@
 
 
 
-body{
-    background:url('http://www.ivymax.com/wp-content/uploads/2014/12/header-background.jpg');
-    background-repeat : no-repeat;
+body {
+    background-image: url('../adminPanelBG.jpg');
+    background-repeat: no-repeat;
 }
 
 

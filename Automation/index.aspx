@@ -15,9 +15,29 @@
     <form id="form1" runat="server">
         <div class ="containerIndex">
             <div class="header1"  runat="server" id="header1">
-                <asp:Button ID="adminPanelButton"  class="btn btn-outline-danger locateButton1" runat="server" Text="Click For Admin Panel"  UseSubmitBehavior="False" OnClick="adminPanelButton_Click" />
+
+                <!--<asp:Button ID="adminPanelButton"  class="btn btn-outline-danger locateButton1" runat="server" Text="Click For Admin Panel"  UseSubmitBehavior="False" OnClick="adminPanelButton_Click" />-->
                 <img id="logoId" runat="server" class="logo"  visible="true"  src ="images/logo.png" />
               
+                <div class="logOut">
+                    
+
+                    <asp:DataList ItemStyle-CssClass="UserDataList" ID="DataList1" runat="server" >
+                            <ItemTemplate>
+                                <span class="fa fa-user" style="color:black">  </span> 
+                                <asp:Label style="color:black" ID="Label4" runat="server" Text='<%#  Eval("FirstName")   %>' > </asp:Label>
+                                <asp:Label style="color:black" ID="Label1" runat="server" Text='<%#  Eval("LastName")   %>' > </asp:Label>
+                            </ItemTemplate>
+                        </asp:DataList>
+
+                    <a href="StudentLoginPage.aspx">
+                                    
+                        <span class="fa fa-sign-out">  </span>  Log Out 
+
+                    </a>          
+                               
+
+                </div>
 
                 <div class="navBar1">
                     <ul>
@@ -84,7 +104,12 @@
                                     Author : <asp:Label  ID="Author" runat="server"  Text='<%# Eval("Author") %>'> </asp:Label>
                                 </li>
                                 <li>
-                                    <span class="fa fa-star checked">  </span> : <asp:Label  ID="Point" runat="server"  Text='<%# Eval("BookRate") %>'> </asp:Label>
+                                    <span class="fa fa-star <%# (Convert.ToInt32(Eval("BookRate")) >= 1) ? "checked" : ""  %> ">  </span>  <asp:Label  ID="Point" runat="server"  > </asp:Label>
+                                     <span class="fa fa-star <%# (Convert.ToInt32(Eval("BookRate")) >= 2) ? "checked" : ""  %> ">  </span>  <asp:Label  ID="Label2" runat="server"  > </asp:Label>
+                                     <span class="fa fa-star <%# (Convert.ToInt32(Eval("BookRate")) >= 3) ? "checked" : ""  %> ">  </span>  <asp:Label  ID="Label3" runat="server"  > </asp:Label>
+                                     <span class="fa fa-star <%# (Convert.ToInt32(Eval("BookRate")) >= 4) ? "checked" : ""  %> ">  </span>  <asp:Label  ID="Label5" runat="server"  > </asp:Label>
+                                     <span class="fa fa-star <%# (Convert.ToInt32(Eval("BookRate")) >= 5) ? "checked" : ""  %> ">  </span>  <asp:Label  ID="Label6" runat="server"  > </asp:Label>
+                                    <asp:Label  ID="Label4" runat="server" Text='<%#  Convert.ToInt32(Eval("BookRate"))   %>' > </asp:Label>
                                 </li>
                            </ul>
                                    

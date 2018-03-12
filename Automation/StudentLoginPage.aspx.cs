@@ -15,6 +15,16 @@ public partial class StudentLoginPage : System.Web.UI.Page
 
     }
 
+    
+    protected void registerButton_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("RegisterPage.aspx");
+    }
+    protected void adminPanelButton_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("loginPage.aspx");
+    }
+
     protected void btnSubmit_Click(object sender, EventArgs e)
     {
         string constr = ConfigurationManager.ConnectionStrings["DBSC"].ConnectionString;
@@ -22,10 +32,10 @@ public partial class StudentLoginPage : System.Web.UI.Page
 
         try
         {
-            string uid = txtUsername.Text;
+            string uid = txtSchoolID.Text;
             string pass = txtPassword.Text;
             con.Open();
-            string qry = "select * from Member where FirstName = '" + txtUsername.Text + "' and LastName = '" + txtPassword.Text + "'";
+            string qry = "select * from Member where schoolID = '" + txtSchoolID.Text + "' and Password = '" + txtPassword.Text + "'";
             SqlCommand cmd = new SqlCommand(qry, con);
             SqlDataReader sdr = cmd.ExecuteReader();
             if (sdr.Read())

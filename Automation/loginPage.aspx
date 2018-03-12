@@ -16,12 +16,12 @@
             <div class="col-md-12">
                 <div class="wrap">
                     <p class="form-title">
-                        Sign In</p>
+                        Admin Log In</p>
                     <form class="login" runat="server"> 
                         <asp:TextBox ID="txtUsername"  runat="server" placeholder="Username"/>
                         <asp:TextBox ID="txtPassword"  runat="server" TextMode="Password" placeholder="Password" />
                         <asp:Button type="submit" ID="Button1" runat="server" Text="Sign In" class="btn btn-success btn-sm" OnClick="btnSubmit_Click" />
-                    
+                        <asp:Button ID="StudentPanelButton"  class="btn btn-outline-danger locateButton1" runat="server" Text="Click For Student Login Page"  UseSubmitBehavior="False" OnClick="StudentPanelClick" />
                     </form>
                 </div>
             </div>
