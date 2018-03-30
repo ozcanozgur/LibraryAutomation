@@ -59,7 +59,7 @@ public partial class BorrowBooks : System.Web.UI.Page
         
         string constr = ConfigurationManager.ConnectionStrings["DBSC"].ConnectionString;
             SqlConnection con = new SqlConnection(constr);
-            string qry = "insert into[Borrowed Books](BookID, MemberID, ExpiredDate, borrowDate) values ((select bookID FROM Books WHERE Title = '"+txtTitle2.Text+"') ,(select MemberID from Member where tcNo = '" + TxtID.Text+ "'), getdate() + 15 , getdate())";
+            string qry = "insert into[Borrowed Books](BookID, MemberID, ExpiredDate, borrowDate) values ((select bookID FROM Books WHERE Title = '"+txtTitle2.Text+"') ,(select MemberID from Member where SchoolID = '" + TxtID.Text+ "'), getdate() + 15 , getdate())";
             SqlCommand cmd = new SqlCommand(qry, con);
             SqlDataAdapter sda = new SqlDataAdapter();
             cmd.Connection = con;

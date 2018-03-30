@@ -79,7 +79,7 @@
                         <asp:boundfield datafield="Name"  headertext="NameSurname"></asp:boundfield>
                         <asp:boundfield datafield="MailAddress" headertext="Mail Address"> </asp:boundfield>
                         <asp:boundfield datafield="PhoneNumber" headertext="Phone Number"> </asp:boundfield>
-                        <asp:boundfield datafield="tcNo" headertext="School ID">  </asp:boundfield>
+                        <asp:boundfield datafield="SchoolID" headertext="School ID">  </asp:boundfield>
                         <asp:boundfield datafield="ExpiredDate" DataFormatString = "{0:dd/MM/yyyy}" headertext="Expired Date">  </asp:boundfield>
                         <asp:boundfield datafield="BorrowDate" DataFormatString = "{0:dd/MM/yyyy}" headertext="Borrow Date">  </asp:boundfield>
                         

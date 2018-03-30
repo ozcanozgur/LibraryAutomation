@@ -10,25 +10,17 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div class="containerBookDetail">
-            <div class="header1"  runat="server" id="header1">
-                <div class="logOut">
-                    <asp:DataList ItemStyle-CssClass="UserDataList" ID="DataList1" runat="server" >
-                            <ItemTemplate>
-                                <span class="fa fa-user" style="color:black">  </span> 
-                                <asp:Label style="color:black" ID="Label4" runat="server" Text='<%#  Eval("FirstName")   %>' > </asp:Label>
-                                <asp:Label style="color:black" ID="Label1" runat="server" Text='<%#  Eval("LastName")   %>' > </asp:Label>
-                            </ItemTemplate>
-                    </asp:DataList>
-                    <a href="StudentLoginPage.aspx">
-                        <span class="fa fa-sign-out">  </span>  Log Out 
-                    </a>   
-                </div>  
-            </div>
 
-           
-        </div>
-    </form>
+    <div>
+        <form id="form1" runat="server">
+
+            <asp:Image ID="imgBookImage" runat="server"  Width="250px"  />
+
+            <asp:Label ID="lblBookName" runat="server" Text="Label"></asp:Label>
+
+            <asp:Label ID="lblBookAuthor" runat="server" Text="Label"></asp:Label>
+        </form>
+    </div>
+
 </body>
 </html>

@@ -10,6 +10,9 @@ using System.Data.SqlClient;
 
 public partial class StudentLoginPage : System.Web.UI.Page
 {
+    /*page init user session kontrol metodu*/
+
+
     protected void Page_Load(object sender, EventArgs e)
     {
 

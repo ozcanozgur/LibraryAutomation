@@ -14,7 +14,7 @@ public partial class BorrowedBooks : System.Web.UI.Page
     {
         string constr = ConfigurationManager.ConnectionStrings["DBSC"].ConnectionString;
         SqlConnection con = new SqlConnection(constr);
-        SqlDataAdapter sda = new SqlDataAdapter("select (FirstName +' '+ LastName) as Name ,tcNo,PhoneNumber,title,ExpiredDate,borrowDate from [Borrowed Books] inner join Member on Member.MemberID =[Borrowed Books].MemberID inner join Books on books.BookID = [Borrowed Books].BookID where expiredDate > getdate() order by ExpiredDate", con);
+        SqlDataAdapter sda = new SqlDataAdapter("select (FirstName +' '+ LastName) as Name ,SchoolID,PhoneNumber,title,ExpiredDate,borrowDate from [Borrowed Books] inner join Member on Member.MemberID =[Borrowed Books].MemberID inner join Books on books.BookID = [Borrowed Books].BookID where expiredDate > getdate() order by ExpiredDate", con);
         con.Open();
         DataTable dtCourse = new DataTable();
         sda.Fill(dtCourse);

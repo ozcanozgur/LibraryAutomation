@@ -77,7 +77,7 @@
                     <columns>
                         
                         <asp:boundfield datafield="Name"  headertext="Name&Surname"></asp:boundfield>
-                        <asp:boundfield datafield="tcNo" headertext="School ID"> </asp:boundfield>
+                        <asp:boundfield datafield="SchoolID" headertext="School ID"> </asp:boundfield>
                         <asp:boundfield datafield="PhoneNumber" headertext="Phone Number"> </asp:boundfield>
                         <asp:boundfield datafield="title" headertext="Title">  </asp:boundfield>
                          <asp:boundfield datafield="ExpiredDate" DataFormatString = "{0:dd/MM/yyyy}" headertext="Expired Date"> </asp:boundfield>

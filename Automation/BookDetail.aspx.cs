@@ -12,27 +12,39 @@ public partial class BookDetail : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        ListUserİnfo();
+        if (!Page.IsPostBack)
+        {
+            string BookID = Request.QueryString["bid"];
+            DataTable dtStudent = GetStudentDetails(BookID);
+
+            if (dtStudent.Rows.Count > 0)
+            {
+                imgBookImage.ImageUrl = "/images/Books Images/" + dtStudent.Rows[0]["BookImage"].ToString();
+                lblBookName.Text = dtStudent.Rows[0]["Title"].ToString();
+                lblBookAuthor.Text = dtStudent.Rows[0]["Author"].ToString();
+
+
+
+            }  
+        }
     }
 
-    private void ListUserİnfo()
+    
+
+    private DataTable GetStudentDetails(string pBookID)
     {
         string connectionString = ConfigurationManager.ConnectionStrings["DBSC"].ConnectionString;
         SqlConnection connection = new SqlConnection(connectionString);
         connection.Open();
 
-        DataTable dtUser = new DataTable();
+        DataTable dtStudent = new DataTable();
         if (connection.State == ConnectionState.Open)
         {
-            string query = " select * from Member where MemberID=  '" + Request.QueryString["sid"] + "' ";
+            string query = "SELECT * from Books  Where BookID =" + pBookID + "";
             SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-            adapter.Fill(dtUser);
-
-            DataList1.DataSource = dtUser;
-            DataList1.DataBind();
+            adapter.Fill(dtStudent);
             connection.Close();
-
-
         }
+        return dtStudent;
     }
 }
