@@ -1,23 +1,145 @@
-﻿.containerBookDetail {
+﻿.container1{
     margin: 0 auto;
-    width: 95%;
+    width:95%;
 }
 
-.header1 {
-    position: relative;
-    background-image: url(../headerBackground.png);
+.titleField {
     width: 100%;
-    height: 50Px;
-    background-size: 100%;
+    height: 30px;
+    font-size: 25px;
+    margin-top : 10px;
 }
 
-.logOut {
-    background-color: white;
-    min-width: 1%;
-    height: 50px;
-    float: right;
-    opacity: 0.3;
-    color: black;
-    border: solid 2px;
+.ImageSide{
+    float:left;
+    width : 20%;
+    
 }
+
+.detailSide{
+    float : left;
+    margin-left : 50px;
+    width : 450px;
+    margin-top : 10px;
+}
+
+.Author {
+    border: solid  1px;
+    padding : 10px;
+    width : 450px;
+}
+.Publisher {
+    border-bottom: solid 1px;
+    border-left: solid 1px;
+    border-right : solid 1px;
+    padding: 10px;
+    width : 450px;
+}
+.Rate {
+    border-bottom: solid 1px;
+    border-left: solid 1px;
+    border-right: solid 1px;
+    padding: 10px;
+    width: 450px;
+}
+
+.btnReserve
+{
+    float:right;
+    margin-top: 20px;
+}
+
+
+.Image {
+    float: left;
+    position: static;
+    margin-top: 10px;
+    height: 300px;
+    width: 250px;
+}
+
+.SummarySide {
+    float: left;
+    margin: 0 auto;
+    padding : 15px;
+    letter-spacing: 3px;
+}
+.bookDetail{
+    margin : 0 auto;
+    width : 90%;
+    height : 1000px;
+}
+
+
+
+.commentBox {
+    float: left;
+    width: 100%;
+    margin-top: 150px;
+}
+
+.status-upload {
+    background: none repeat scroll 0 0 #f5f5f5;
+    float: left;
+    width: 50%;
+}
+
+
+.commentArea {
+    background: none repeat scroll 0 0 #fff;
+    border: medium none;
+    color: #777777;
+    float: left;
+    font-family: Lato;
+    font-size: 14px;
+    height: 142px;
+    letter-spacing: 0.3px;
+    padding: 20px;
+    width: 100%;
+    resize: vertical;
+    outline: none;
+    border: 1px solid #F2F2F2;
+}
+
+
+.status-upload button {
+    border: medium none;
+    border-radius: 4px;
+    color: #fff;
+    float: right;
+    font-family: Lato;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    margin-right: 9px;
+}
+
+.dropdown > a > span.green:before {
+    border-left-color: #2dcb73;
+}
+
+.status-upload button > i {
+    margin-right: 7px;
+}
+
+.stars {
+    float: left;
+    
+
+}
+
+.set{
+   color : #495057;
+   font-size : 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
 

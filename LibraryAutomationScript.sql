@@ -35,6 +35,7 @@ CREATE TABLE Contact(
 	[MailAddress] [varchar](255) NOT NULL,
 	[PhoneNumber] [varchar](255) NOT NULL,
 	[SchoolID] int not null unique,
+	reserveSituation BIT default 0,
 	PRIMARY KEY (MemberID),
 	 );
 
@@ -56,6 +57,7 @@ CREATE TABLE Contact(
 	BookImage varchar(255),
 	Summary text NULL,
 	BookRate float default 1,
+	StockSituation int default 1,
 	PRIMARY KEY (BookID),
 	);
 	
@@ -70,6 +72,27 @@ CREATE TABLE Contact(
     FOREIGN KEY (BookID) REFERENCES Books(BookID),
 	FOREIGN KEY (MemberID) REFERENCES Member(MemberID),
 );
+
+	Create Table ReservedBooks(
+	ReserveID int IDENTITY(1,1) NOT NULL,
+	BookID int NOT NULL,
+    MemberID int,
+	reserveDate date,
+	isTaked BIT default 0,
+    PRIMARY KEY (ReserveID),
+    FOREIGN KEY (BookID) REFERENCES Books(BookID),
+	FOREIGN KEY (MemberID) REFERENCES Member(MemberID),
+	)
+
+	Create Table RateAndCommentBooks(
+	RateID int IDENTITY(1,1) NOT NULL,
+	BookID int NOT NULL,
+    MemberID int,
+	rateDate date,
+    PRIMARY KEY (RateID),
+    FOREIGN KEY (BookID) REFERENCES Books(BookID),
+	FOREIGN KEY (MemberID) REFERENCES Member(MemberID),
+	)
 
 	
 
@@ -205,24 +228,32 @@ So, she travels to Rome, where she learns Italian from handsome, brown-eyed iden
 insert into Admin (FirstName,LastName,password,MailAddress,PhoneNumber) values ('admin','ozgur','1234','aadfad@sdfa.com','4564654')
 go
 
- insert into Member (FirstName, LastName, MailAddress, PhoneNumber, tcNo) values 
- ('ugurhan','uslu','ozcanozgur123@gmail.com','05394947484','123456710')
+ insert into Member (FirstName, LastName,Password,MailAddress, PhoneNumber, SchoolID) values 
+ ('ozcan','ozgur','1234','ozcanozgur123@gmail.com','05394947484','1401020055')
  go
 
  insert into [Borrowed Books] (BookID,MemberID,ExpiredDate,borrowDate) values 
  ( (select bookID FROM Books WHERE Title = 'The Templars') , 
- (select MemberID from Member where FirstName='ozcan' and tcNo = '123456789'),getdate()+ 25, getdate());
+ (select MemberID from Member where FirstName='ozcan' and SchoolID = '123456789'),getdate()+ 25, getdate());
  go
 
 
  select * from Member
 
- select * from Books
+ select * from ReservedBooks
+
+ insert into [Borrowed Books] (BookID,MemberID,ExpiredDate,borrowDate) values 
+ ( (select bookID FROM Books WHERE Title = 'The Templars') , 
+ (select MemberID from Member where FirstName='ozcan' and SchoolID = '123456789'),getdate()+ 25, getdate());
+ go
 
  
+ insert into[ReservedBooks](BookID, MemberID, reserveDate) 
+ values ((select bookID FROM Books WHERE BookID = '" + txtTitle2.Text + "') 
+ ,(select MemberID from Member where MemberID = '" + TxtID.Text + "'), getdate() + 15 , getdate())
 
 
- update Books set BookRate =5 where BookID = 2
+ 
 
  select * from Member 
 
