@@ -43,6 +43,11 @@
     width: 450px;
 }
 
+#labelStock{
+    margin-top : 20px;
+    float : left;
+}
+
 .btnReserve
 {
     float:right;
@@ -85,6 +90,21 @@
 }
 
 
+
+.CommentSide {
+    border : solid 1px;
+    float: left;
+    width: 75%;
+    min-height: 100px;
+    padding : 10px;
+}
+
+.CommentSide ul{
+    margin-top: 10px;
+    text-decoration : none;
+}
+
+
 .commentArea {
     background: none repeat scroll 0 0 #fff;
     border: medium none;
@@ -102,7 +122,7 @@
 }
 
 
-.status-upload button {
+.btnComment {
     border: medium none;
     border-radius: 4px;
     color: #fff;
@@ -113,23 +133,22 @@
     margin-right: 9px;
 }
 
-.dropdown > a > span.green:before {
-    border-left-color: #2dcb73;
-}
 
-.status-upload button > i {
-    margin-right: 7px;
-}
 
 .stars {
     float: left;
-    
-
 }
 
 .set{
    color : #495057;
    font-size : 50px;
+}
+
+.tik{
+    float:right;
+    max-width : 35px;
+    max-height : 35px;
+    
 }
 
 

@@ -88,7 +88,9 @@ CREATE TABLE Contact(
 	RateID int IDENTITY(1,1) NOT NULL,
 	BookID int NOT NULL,
     MemberID int,
+	rate float not null,
 	rateDate date,
+	comment text not null,
     PRIMARY KEY (RateID),
     FOREIGN KEY (BookID) REFERENCES Books(BookID),
 	FOREIGN KEY (MemberID) REFERENCES Member(MemberID),
@@ -253,11 +255,22 @@ go
  ,(select MemberID from Member where MemberID = '" + TxtID.Text + "'), getdate() + 15 , getdate())
 
 
+
+ update Books set StockSituation = StockSituation - 1 where BookID =   3
+
  
 
- select * from Member 
+ update Books set StockSituation = 1 where BookID = 5 
+
+x  
 
 
+ 
+  insert into RateAndCommentBooks (BookID,MemberID,rate,rateDate,comment) values 
+ ( (select bookID FROM Books WHERE Title = 'The Templars') , 
+ (select MemberID from Member where FirstName='ozcan' and SchoolID = '1401020055'),getdate(), 'asdasd');
+ go
 
+ 
 
 

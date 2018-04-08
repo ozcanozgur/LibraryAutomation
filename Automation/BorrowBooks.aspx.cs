@@ -55,11 +55,12 @@ public partial class BorrowBooks : System.Web.UI.Page
         
 
         int userID = 0;
-        
-        
-        string constr = ConfigurationManager.ConnectionStrings["DBSC"].ConnectionString;
+
+        try
+        {
+            string constr = ConfigurationManager.ConnectionStrings["DBSC"].ConnectionString;
             SqlConnection con = new SqlConnection(constr);
-            string qry = "insert into[Borrowed Books](BookID, MemberID, ExpiredDate, borrowDate) values ((select bookID FROM Books WHERE Title = '"+txtTitle2.Text+"') ,(select MemberID from Member where SchoolID = '" + TxtID.Text+ "'), getdate() + 15 , getdate())";
+            string qry = "insert into[Borrowed Books](BookID, MemberID, ExpiredDate, borrowDate) values ((select bookID FROM Books WHERE Title = '" + txtTitle2.Text + "') ,(select MemberID from Member where SchoolID = '" + TxtID.Text + "'), getdate() + 15 , getdate())";
             SqlCommand cmd = new SqlCommand(qry, con);
             SqlDataAdapter sda = new SqlDataAdapter();
             cmd.Connection = con;
@@ -67,8 +68,16 @@ public partial class BorrowBooks : System.Web.UI.Page
             //int result= cmd.ExecuteNonQuery(); //Returns the count of rows effected by the Query
             userID = Convert.ToInt32(cmd.ExecuteScalar()); //Returns the first column of the first row
             con.Close();
-        
-       
+        }
+        catch (System.Data.SqlClient.SqlException ex)
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Please Fill all field');", true);
+        }
+        catch (Exception)
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Please Enter True Values');", true);
+        }
+
 
 
 

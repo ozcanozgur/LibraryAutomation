@@ -69,12 +69,13 @@
                         <span id="span5" class="fa fa-star " runat="server">  </span>  
                         <asp:Label ID="lblBookRate" runat="server" Text="Label"></asp:Label>
                     </div>
-                    <asp:Button  class="btn btn-outline-danger btnReserve" OnClick="btnReserve_OnClick" Height="28" Text="Reserve Books"  runat="server" /> 
+                    <asp:Label  ID="labelStock" runat="server" Text='<%#  Eval("FirstName")   %>' >  </asp:Label>
+                    <asp:Button ID="btnReserve" type="submit" ValidationGroup="Group1" class="btn btn-outline-danger btnReserve" OnClick="btnReserve_OnClick" Height="28" Text="Reserve Books"  runat="server" /> 
                 </div>
                 
                 
                 
-                <div class="SummarySide">
+                <div class="SummarySide"> 
                     
 
                    <center><p>Summary</p></center>
@@ -83,9 +84,28 @@
 
                 </div>  
                 
+                
+
                 <div class="CommentSide">
 
                     
+                    <ul>
+                                <li>
+                                    <span class="fa fa-user fa-lg"> </span> <asp:Label  ID="Title" runat="server"  Text='<%#Eval("Title") %>'>  </asp:Label>
+                                </li>
+                                <li>
+                                    Comment : <asp:Label  ID="Genre" runat="server"  Text='<%# Eval("Genre") %>'> </asp:Label>
+                                </li>
+                                <li>
+                                    <span class="fa fa-star <%# (Convert.ToInt32(Eval("BookRate")) >= 1) ? "checked" : ""  %> ">  </span>  <asp:Label  ID="Point" runat="server"  > </asp:Label>
+                                     <span class="fa fa-star <%# (Convert.ToInt32(Eval("BookRate")) >= 2) ? "checked" : ""  %> ">  </span>  <asp:Label  ID="Label2" runat="server"  > </asp:Label>
+                                     <span class="fa fa-star <%# (Convert.ToInt32(Eval("BookRate")) >= 3) ? "checked" : ""  %> ">  </span>  <asp:Label  ID="Label3" runat="server"  > </asp:Label>
+                                     <span class="fa fa-star <%# (Convert.ToInt32(Eval("BookRate")) >= 4) ? "checked" : ""  %> ">  </span>  <asp:Label  ID="Label5" runat="server"  > </asp:Label>
+                                     <span class="fa fa-star <%# (Convert.ToInt32(Eval("BookRate")) >= 5) ? "checked" : ""  %> ">  </span>  <asp:Label  ID="Label6" runat="server"  > </asp:Label>
+                                    <asp:Label  ID="Label4" runat="server" Text='<%#  Convert.ToInt32(Eval("BookRate"))   %>' > </asp:Label>
+                                </li>
+                           </ul>
+
 					
                 </div>
 
@@ -93,7 +113,8 @@
 		            <div class="status-upload">
 						
                 
-				        <textarea class="commentArea" placeholder="What are you doing right now?" ></textarea>
+				       
+                        <asp:TextBox runat="server" ID="textBox" CssClass="commentArea"  placeholder="Write your comment here!" ></asp:TextBox>
 
                         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
@@ -108,6 +129,9 @@
                             <asp:LinkButton OnClick="star5_OnClick" ID="star5" runat="server"> <span id="starFive"  class="fa fa-star set fa-2x" runat="server">  </span></asp:LinkButton> 
                             <asp:Label ID="rate" runat="server"></asp:Label>
                         </div>
+                
+                <asp:Button id="btnComment" runat="server" onclick="btnComment_OnClick" type="submit" Text="Comment" class="btn btn-success green btnComment" />
+                <asp:Image id="imgTik" CssClass="tik" ImageUrl="images/success.png" Visible="false" runat="server"/>
             </ContentTemplate>
  
             <Triggers>
@@ -116,17 +140,16 @@
                 <asp:AsyncPostBackTrigger ControlID="star3" EventName="Click" />
                 <asp:AsyncPostBackTrigger ControlID="star4" EventName="Click" />
                 <asp:AsyncPostBackTrigger ControlID="star5" EventName="Click" />
+                <asp:AsyncPostBackTrigger ControlID="btnComment" EventName="Click" />
             </Triggers>
         </asp:UpdatePanel>
-                
-                        
-
-                        
-
-				        <button type="submit" class="btn btn-success green"><i class="fa fa-share"></i> Share</button>
-									
+                		
 		            </div>
-		        </div><!-- CommentBox -->				
+                     <div>
+                    
+                </div>
+		        </div><!-- CommentBox -->	
+                
             </div><!-- book detail -->
         </form>
     </div>
