@@ -234,42 +234,12 @@ go
  ('ozcan','ozgur','1234','ozcanozgur123@gmail.com','05394947484','1401020055')
  go
 
- insert into [Borrowed Books] (BookID,MemberID,ExpiredDate,borrowDate) values 
- ( (select bookID FROM Books WHERE Title = 'The Templars') , 
- (select MemberID from Member where FirstName='ozcan' and SchoolID = '123456789'),getdate()+ 25, getdate());
- go
 
 
- select * from Member
-
- select * from ReservedBooks
-
- insert into [Borrowed Books] (BookID,MemberID,ExpiredDate,borrowDate) values 
- ( (select bookID FROM Books WHERE Title = 'The Templars') , 
- (select MemberID from Member where FirstName='ozcan' and SchoolID = '123456789'),getdate()+ 25, getdate());
- go
-
- 
- insert into[ReservedBooks](BookID, MemberID, reserveDate) 
- values ((select bookID FROM Books WHERE BookID = '" + txtTitle2.Text + "') 
- ,(select MemberID from Member where MemberID = '" + TxtID.Text + "'), getdate() + 15 , getdate())
-
-
-
- update Books set StockSituation = StockSituation - 1 where BookID =   3
 
  
 
- update Books set StockSituation = 1 where BookID = 5 
 
-x  
-
-
- 
-  insert into RateAndCommentBooks (BookID,MemberID,rate,rateDate,comment) values 
- ( (select bookID FROM Books WHERE Title = 'The Templars') , 
- (select MemberID from Member where FirstName='ozcan' and SchoolID = '1401020055'),getdate(), 'asdasd');
- go
 
  
 

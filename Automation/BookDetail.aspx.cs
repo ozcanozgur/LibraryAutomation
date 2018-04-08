@@ -12,10 +12,11 @@ public partial class BookDetail : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+
         
-        
-            
-            ListUserİnfo();
+
+        ListUserİnfo();
+
             string BookID = Request.QueryString["bid"];
             string UserID = Request.QueryString["sid"];
             DataTable dtBook = GetBookDetail(BookID);
@@ -60,8 +61,9 @@ public partial class BookDetail : System.Web.UI.Page
                     span5.Attributes["class"] = "fa fa-star checked";
                 }
 
-            
-            
+            getComments(BookID);
+
+
 
         }
     }
@@ -102,6 +104,30 @@ public partial class BookDetail : System.Web.UI.Page
             connection.Close();
         }
         return dtBook;
+    }
+
+    private void getComments(string pBookID)
+    {
+        string connectionString = ConfigurationManager.ConnectionStrings["DBSC"].ConnectionString;
+        SqlConnection connection = new SqlConnection(connectionString);
+        connection.Open();
+
+        DataTable dtComment = new DataTable();
+        if (connection.State == ConnectionState.Open)
+        {
+            string query = "select(m.FirstName + ' ' + m.LastName) as Name ,comment, rate from RateAndCommentBooks rcb  " +
+                "join Member m on rcb.MemberID = m.MemberID  " +
+                "join Books b on rcb.BookID = b.BookID where rcb.BookID =" + pBookID + "  ORDER BY RateID DESC";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+            adapter.Fill(dtComment);
+
+            dlComment.DataSource = dtComment;
+            dlComment.DataBind();
+            connection.Close();
+
+
+        }
     }
 
     protected void btnReserve_OnClick(object sender, EventArgs e)
@@ -159,9 +185,9 @@ public partial class BookDetail : System.Web.UI.Page
         
         string BookID = Request.QueryString["bid"];
         string UserID = Request.QueryString["sid"];
-        int userID = 0;
+
         imgTik.Visible = true;
-        ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('asdasdsadlkasdşlkas');", true);
+
         string constr = ConfigurationManager.ConnectionStrings["DBSC"].ConnectionString;
         SqlConnection con = new SqlConnection(constr);
       string qry = "insert into RateAndCommentBooks(BookID, MemberID, rate, rateDate, comment)" +
@@ -171,15 +197,8 @@ public partial class BookDetail : System.Web.UI.Page
         cmd.Connection = con;
         con.Open();
         int result = cmd.ExecuteNonQuery();
-        //userID = Convert.ToInt32(cmd.ExecuteScalar());
+        
         con.Close();
-        
-        if (userID > 0)
-            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Please Try Again');", true);
-        else imgTik.Visible = false;
-        
-            
-        
     }
 
     protected void ContactClick(object sender, EventArgs e)

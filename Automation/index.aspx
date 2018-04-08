@@ -103,7 +103,7 @@
                                     Author : <asp:Label  ID="Author" runat="server"  Text='<%# Eval("Author") %>'> </asp:Label>
                                 </li>
                                 <li>
-                                    <span class="fa fa-star <%# (Convert.ToInt32(Eval("BookRate")) >= 1) ? "checked" : ""  %> ">  </span>  <asp:Label  ID="Point" runat="server"  > </asp:Label>
+                                     <span class="fa fa-star <%# (Convert.ToInt32(Eval("BookRate")) >= 1) ? "checked" : ""  %> ">  </span>  <asp:Label  ID="Point" runat="server"  > </asp:Label>
                                      <span class="fa fa-star <%# (Convert.ToInt32(Eval("BookRate")) >= 2) ? "checked" : ""  %> ">  </span>  <asp:Label  ID="Label2" runat="server"  > </asp:Label>
                                      <span class="fa fa-star <%# (Convert.ToInt32(Eval("BookRate")) >= 3) ? "checked" : ""  %> ">  </span>  <asp:Label  ID="Label3" runat="server"  > </asp:Label>
                                      <span class="fa fa-star <%# (Convert.ToInt32(Eval("BookRate")) >= 4) ? "checked" : ""  %> ">  </span>  <asp:Label  ID="Label5" runat="server"  > </asp:Label>

@@ -20,8 +20,6 @@
 
             <div class="header1"  runat="server" id="header1">
 
-                
-              
                 <div class="logOut">
                     
                     <asp:DataList ItemStyle-CssClass="UserDataList" ID="DataList1" runat="server" >
@@ -47,6 +45,7 @@
             </div>
 
             <div class="bookDetail">
+              
                 <div class ="titleField">
                  <asp:Label ID="lblBookName" runat="server" Text="Label"></asp:Label>
                 </div>
@@ -54,6 +53,7 @@
                 <asp:Image cssClass="Image" ID="imgBookImage" runat="server"/>
                 </div>
 
+              
                 <div class="detailSide"> 
                     <div class="Author">
                     Author : <asp:Label ID="lblBookAuthor" runat="server" Text="Label"></asp:Label>
@@ -83,37 +83,36 @@
                     <asp:Label  ID="lblBookSummary" runat="server" Text="Label"></asp:Label>
 
                 </div>  
-                
-                
+            </div>
 
+            <div class="bookComment">
+                
+                <asp:DataList ItemStyle-CssClass="CommentListClass"  ID="dlComment" runat="server" >
+                    <ItemTemplate>
                 <div class="CommentSide">
-
-                    
                     <ul>
                                 <li>
-                                    <span class="fa fa-user fa-lg"> </span> <asp:Label  ID="Title" runat="server"  Text='<%#Eval("Title") %>'>  </asp:Label>
+                                    <span class="fa fa-user fa-lg"> </span> <asp:Label  ID="Name" runat="server"  Text='<%#Eval("Name")%>'>  </asp:Label>
                                 </li>
                                 <li>
-                                    Comment : <asp:Label  ID="Genre" runat="server"  Text='<%# Eval("Genre") %>'> </asp:Label>
+                                    <asp:Label  ID="Genre" runat="server"  Text='<%# Eval("comment") %>'> </asp:Label>
                                 </li>
                                 <li>
-                                    <span class="fa fa-star <%# (Convert.ToInt32(Eval("BookRate")) >= 1) ? "checked" : ""  %> ">  </span>  <asp:Label  ID="Point" runat="server"  > </asp:Label>
-                                     <span class="fa fa-star <%# (Convert.ToInt32(Eval("BookRate")) >= 2) ? "checked" : ""  %> ">  </span>  <asp:Label  ID="Label2" runat="server"  > </asp:Label>
-                                     <span class="fa fa-star <%# (Convert.ToInt32(Eval("BookRate")) >= 3) ? "checked" : ""  %> ">  </span>  <asp:Label  ID="Label3" runat="server"  > </asp:Label>
-                                     <span class="fa fa-star <%# (Convert.ToInt32(Eval("BookRate")) >= 4) ? "checked" : ""  %> ">  </span>  <asp:Label  ID="Label5" runat="server"  > </asp:Label>
-                                     <span class="fa fa-star <%# (Convert.ToInt32(Eval("BookRate")) >= 5) ? "checked" : ""  %> ">  </span>  <asp:Label  ID="Label6" runat="server"  > </asp:Label>
-                                    <asp:Label  ID="Label4" runat="server" Text='<%#  Convert.ToInt32(Eval("BookRate"))   %>' > </asp:Label>
+                                    <span class="fa fa-star <%# (Convert.ToInt32(Eval("rate")) >= 1) ? "checked" : ""  %> ">  </span>  <asp:Label  ID="Point" runat="server"  > </asp:Label>
+                                     <span class="fa fa-star <%# (Convert.ToInt32(Eval("rate")) >= 2) ? "checked" : ""  %> ">  </span>  <asp:Label  ID="Label2" runat="server"  > </asp:Label>
+                                     <span class="fa fa-star <%# (Convert.ToInt32(Eval("rate")) >= 3) ? "checked" : ""  %> ">  </span>  <asp:Label  ID="Label3" runat="server"  > </asp:Label>
+                                     <span class="fa fa-star <%# (Convert.ToInt32(Eval("rate")) >= 4) ? "checked" : ""  %> ">  </span>  <asp:Label  ID="Label5" runat="server"  > </asp:Label>
+                                     <span class="fa fa-star <%# (Convert.ToInt32(Eval("rate")) >= 5) ? "checked" : ""  %> ">  </span>  <asp:Label  ID="Label6" runat="server"  > </asp:Label>
+                                    <asp:Label  ID="Label4" runat="server" Text='<%#  Convert.ToInt32(Eval("rate"))   %>' > </asp:Label>
                                 </li>
                            </ul>
-
-					
                 </div>
+            </ItemTemplate>
+                </asp:DataList>
 
                  <div class="commentBox">
 		            <div class="status-upload">
 						
-                
-				       
                         <asp:TextBox runat="server" ID="textBox" CssClass="commentArea"  placeholder="Write your comment here!" ></asp:TextBox>
 
                         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
@@ -149,8 +148,8 @@
                     
                 </div>
 		        </div><!-- CommentBox -->	
-                
-            </div><!-- book detail -->
+             </div><!-- bookComment -->   
+            
         </form>
     </div>
 
