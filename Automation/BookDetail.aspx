@@ -90,6 +90,8 @@
                 <asp:DataList ItemStyle-CssClass="CommentListClass"  ID="dlComment" runat="server" >
                     <ItemTemplate>
                 <div class="CommentSide">
+                    <asp:Image class="imgComment"  
+                                        ImageUrl= "~/images/usergroup.png"  runat="server" />
                     <ul>
                                 <li>
                                     <span class="fa fa-user fa-lg"> </span> <asp:Label  ID="Name" runat="server"  Text='<%#Eval("Name")%>'>  </asp:Label>

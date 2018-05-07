@@ -222,7 +222,26 @@ The perfect antidote to those guides that tell us what to do when we get there, 
 ''Richly evocative, sharp and funny. De Botton proves himself to be a very fine travel writer indeed'' Sunday Telegraph''Delightful, profound, entertaining, I doubt if de Botton has written a dull sentence in his life'' Jan Morris''An elegant and subtle work, unlike any other.');
 INSERT INTO Books(Title,Genre,Author,Publisher,BookImage,Summary) VALUES ('Eat, Pray, Love','Travel','Elizabeth Gilbert','Bloomsbury Publishing PLC','Eatpraylove.jpg','It''s 3 a.m. and Elizabeth Gilbert is sobbing on the bathroom floor. She''s in her thirties, she has a husband, a house, they''re trying for a baby - and she doesn''t want any of it. A bitter divorce and a turbulent love affair later, she emerges battered and bewildered and realises it is time to pursue her own journey in search of three things she has been missing: pleasure, devotion and balance. 
 So, she travels to Rome, where she learns Italian from handsome, brown-eyed identical twins and gains twenty-five pounds, an ashram in India, where she finds that enlightenment entails getting up in the middle of the night to scrub the temple floor, and Bali where a toothless medicine man of indeterminate age offers her a new path to peace: simply sit still and smile. And slowly happiness begins to creep up on her.');
+go
+Create PROCEDURE SP_Add_Comment
+(
+	@BookID int,
+	@UserID int,
+	@Comment text,
+	@rate int
+)
+AS
+BEGIN  
+	
+	declare @rateNumber int;
+	select @rateNumber = COUNT(*) from RateAndCommentBooks where BookID  = @BookID;
+	update Books set BookRate = ((BookRate * @rateNumber) + @rate) / (@ratenumber + 1) where BookID = @BookID;
 
+	insert into RateAndCommentBooks(BookID, MemberID, rate, rateDate, comment)
+	values ((select bookID FROM Books WHERE bookID = @BookID),
+         (select MemberID from Member where MemberID =  @UserID) , @rate , getdate(), @comment)
+END   
+GO
 
 
 

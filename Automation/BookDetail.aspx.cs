@@ -185,15 +185,24 @@ public partial class BookDetail : System.Web.UI.Page
         
         string BookID = Request.QueryString["bid"];
         string UserID = Request.QueryString["sid"];
-
+        string rateString = rate.Text;
+        int rateInt = 0;
+        Int32.TryParse(rateString, out  rateInt);
         imgTik.Visible = true;
-
         string constr = ConfigurationManager.ConnectionStrings["DBSC"].ConnectionString;
         SqlConnection con = new SqlConnection(constr);
-      string qry = "insert into RateAndCommentBooks(BookID, MemberID, rate, rateDate, comment)" +
-            " values((select bookID FROM Books WHERE bookID = '" + BookID + "') ," +
-            " (select MemberID from Member where MemberID = '" + UserID + "'), '"+ rate.Text +"' ,getdate(), '"+ textBox.Text +"')";
-        SqlCommand cmd = new SqlCommand(qry, con);
+        // string qry = "insert into RateAndCommentBooks(BookID, MemberID, rate, rateDate, comment)" +
+        //     " values((select bookID FROM Books WHERE bookID = '" + BookID + "') ," +
+        //   " (select MemberID from Member where MemberID = '" + UserID + "'), '"+ rate.Text +"' ,getdate(), '"+ textBox.Text +"')";
+       // string qry = "exec SP_Add_Comment '" + BookID + "','" + UserID + "','" + textBox.Text + "', '" + Convert.ToInt32(rate.Text) + "'";
+        SqlCommand cmd = new SqlCommand("SP_Add_Comment", con);
+        cmd.CommandType = CommandType.StoredProcedure;
+        
+        cmd.Parameters.Add(new SqlParameter("@BookID",BookID));
+        cmd.Parameters.Add(new SqlParameter("@UserID", UserID));
+        cmd.Parameters.Add(new SqlParameter("@Comment",textBox.Text));
+        cmd.Parameters.Add(new SqlParameter("@Rate", rateInt));
+        
         cmd.Connection = con;
         con.Open();
         int result = cmd.ExecuteNonQuery();
@@ -223,7 +232,7 @@ public partial class BookDetail : System.Web.UI.Page
         starThree.Attributes["class"] = "fa fa-star set fa-2x";
         starFour.Attributes["class"] = "fa fa-star set fa-2x";
         starFive.Attributes["class"] = "fa fa-star  set fa-2x";
-        rate.Text = "1.0";
+        rate.Text = "1";
     }
     protected void star2_OnClick(object sender, EventArgs e)
     {
@@ -232,7 +241,7 @@ public partial class BookDetail : System.Web.UI.Page
         starThree.Attributes["class"] = "fa fa-star  set fa-2x";
         starFour.Attributes["class"] = "fa fa-star set fa-2x";
         starFive.Attributes["class"] = "fa fa-star set fa-2x";
-        rate.Text = "2.0";
+        rate.Text = "2";
     }
     protected void star3_OnClick(object sender, EventArgs e)
     {
@@ -241,7 +250,7 @@ public partial class BookDetail : System.Web.UI.Page
         starThree.Attributes["class"] = "fa fa-star set fa-2x checked";
         starFour.Attributes["class"] = "fa fa-star set fa-2x";
         starFive.Attributes["class"] = "fa fa-star set fa-2x";
-        rate.Text = "3.0";
+        rate.Text = "3";
     }
     protected void star4_OnClick(object sender, EventArgs e)
     {
@@ -250,7 +259,7 @@ public partial class BookDetail : System.Web.UI.Page
         starThree.Attributes["class"] = "fa fa-star set fa-2x checked";
         starFour.Attributes["class"] = "fa fa-star set fa-2x checked";
         starFive.Attributes["class"] = "fa fa-star set fa-2x";
-        rate.Text = "4.0";
+        rate.Text = "4";
     }
     protected void star5_OnClick(object sender, EventArgs e)
     {
@@ -259,7 +268,7 @@ public partial class BookDetail : System.Web.UI.Page
         starThree.Attributes["class"] = "fa fa-star set fa-2x checked";
         starFour.Attributes["class"] = "fa fa-star set fa-2x checked";
         starFive.Attributes["class"] = "fa fa-star set fa-2x checked";
-        rate.Text = "5.0";
+        rate.Text = "5";
     }
 
 }
